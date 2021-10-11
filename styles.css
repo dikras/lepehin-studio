@@ -50,10 +50,149 @@ a {
   color: inherit;
 }
 
-.menu {
+.sidebar {
+  display: flex;
+  justify-content: start;
+  min-width: 440px;
+}
+
+.sidebar-small {
+  width: 98px;
+}
+
+.sidebar-small--closed {
+  display: none;
+}
+
+.sidebar-small__header {
+  height: 84px;
+  border: 1px solid red;
+  margin-bottom: 32px;
+}
+
+.sidebar-small__wrapper {
+  padding-left: 31px;
+  padding-right: 31px;
+}
+
+.sidebar-small__search {
+  height: 36px;
+  width: 36px;
+  border: 1px solid red;
+  margin-bottom: 16px;
+}
+
+.sidebar-small__list {
+  padding-bottom: 32px;
+  border-bottom: 1px solid red;
+  margin-bottom: 32px;
+}
+
+.sidebar-small__item {
+  height: 36px;
+  width: 36px;
+  border: 1px solid red;
+  margin-bottom: 8px;
+}
+
+.sidebar-small__item:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-small__projects-title {
+  height: 36px;
+  width: 36px;
+  border: 1px solid red;
+  margin-bottom: 289px;
+}
+
+.sidebar-small__new-project {
+  height: 32px;
+  width: 32px;
+  border: 1px solid red;
+  margin-bottom: 24px;
+}
+
+.sidebar-small__footer {
+  height: 88px;
+  border: 1px solid red;
+}
+
+.sidebar-big {
   width: 342px;
 }
 
+.sidebar-big--closed {
+  display: none;
+}
+
+.sidebar-big__header {
+  height: 84px;
+  border: 1px solid red;
+  margin-bottom: 32px;
+}
+
+.sidebar-big__wrapper {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.sidebar-big__search {
+  height: 36px;
+  border: 1px solid red;
+  margin-bottom: 16px;
+}
+
+.sidebar-big__list {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid red;
+}
+
+.sidebar-big__item {
+  height: 36px;
+  border: 1px solid red;
+  margin-bottom: 8px;
+}
+
+.sidebar-big__item:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-big__projects-title {
+  height: 36px;
+  border: 1px solid red;
+  margin-bottom: 8px;
+}
+
+.sidebar-big__projects-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar-big__projects-list {
+  margin-bottom: 153px;
+}
+
+.sidebar-big__projects-item {
+  height: 36px;
+  border: 1px solid red;
+  margin-bottom: 8px;
+}
+
+.sidebar-big__new-project {
+  width: 100%;
+  height: 36px;
+  border: 1px solid red;
+  margin-bottom: 24px;
+}
+
+.sidebar-big__footer {
+  height: 88px;
+  border: 1px solid red;
+}
+
+/* 
 .menu-header {
   position: relative;
   display: flex;
@@ -442,4 +581,4 @@ a {
 
 .menu-footer__button--closed {
   display: none;
-}
+} */
