@@ -135,7 +135,6 @@ a {
 .menu-nav {
   padding-left: 24px;
   padding-right: 24px;
-  /* width: 294px; */
   margin-bottom: 32px;
 }
 
@@ -150,24 +149,33 @@ a {
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 16px;
-  position: relative;
 }
 
 .menu-nav__item--inbox {
   position: relative;
 }
 
-.menu-nav__item--inbox::after {
-  position: absolute;
+.menu-nav__count {
+  font-size: 0;
   width: 20px;
   height: 20px;
-  content: '';
-  top: 8px;
-  right: 16px;
   background-image: url('./images/inbox-count.svg');
+  display: inline-block;
+  vertical-align: top;
 }
 
-.menu-nav__item--inbox::after--closed {
+.menu-nav__spot {
+  position: absolute;
+  content: '';
+  top: 8px;
+  left: 27px;
+  width: 8px;
+  height: 8px;
+  font-size: 0;
+  background-image: url('./images/inbox-spot.svg');
+}
+
+.menu-nav__count--closed {
   display: none;
 }
 
@@ -185,7 +193,12 @@ a {
 .menu-nav__link {
   font-family: "Inter Medium", "Open Sans", sans-serif;
   display: inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+}
+
+.menu-nav__link--inbox {
+  width: 206px;
+  margin-right: 8px;
 }
 
 .menu-nav__link--closed {
@@ -205,6 +218,8 @@ a {
   display: inline-block;
   vertical-align: middle;
   margin-right: 8px;
+  width: 20px;
+  height: 20px;
 }
 
 .menu-nav__item:hover svg > path {
@@ -232,19 +247,29 @@ a {
   vertical-align: middle;
   margin-left: 18px;
   margin-right: 8px;
+  height: 20px;
 }
 
 .menu-projects__heading {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
   font-weight: 500;
   margin: 0;
+}
+
+.menu-projects__heading--closed {
+  display: none;
+}
+
+.menu-projects__list--closed {
+  display: none;
 }
 
 .menu-projects__list {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-right: 64px;
+  margin-bottom: 144px;
 }
 
 .menu-projects__item {
@@ -272,13 +297,12 @@ a {
   background-color: #84CC16;
 }
 
-.menu-projects__item--reduction::before {
+.menu-projects__item--redaction::before {
   background-color: #EC4899;
 }
 
 .new-project__button {
   width: 294px;
-  /* text-align: center; */
   border-radius: 4px;
   background-color: #A855F7;
   font-family: "Inter Medium", "Open Sans", sans-serif;
@@ -347,6 +371,10 @@ a {
   margin-right: 88px;
 }
 
+.menu-footer__author--closed {
+  display: none;
+}
+
 .menu-footer__name {
   font-family: "Inter Medium", "Open Sans", sans-serif;
   font-size: 14px;
@@ -383,4 +411,8 @@ a {
   background-color: #A1A1AA;
   border: 1.5px solid #A1A1AA;
   box-shadow: 0 7px 0 #A1A1AA, 0 14px 0 #A1A1AA;;
+}
+
+.menu-footer__button--closed {
+  display: none;
 }
