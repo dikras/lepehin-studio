@@ -65,9 +65,32 @@ a {
 }
 
 .sidebar-small__header {
+  background-color: #F9FAFB;
   height: 84px;
-  border: 1px solid red;
   margin-bottom: 32px;
+  padding: 30px 36px;
+}
+
+.sidebar-small__toggle {
+  width: 26px;
+  height: 24px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  position: relative;
+}
+
+.sidebar-small__toggle::before {
+  position: absolute;
+  content: '';
+  left: 4px;
+  top: 4px;
+  width: 18px;
+  height: 1.5px;
+  background-color: #71717A;
+  box-shadow: 0 8px 0 0 #71717A, 0 16px 0 0 #71717A;
 }
 
 .sidebar-small__wrapper {
@@ -75,47 +98,114 @@ a {
   padding-right: 31px;
 }
 
-.sidebar-small__search {
+.sidebar-small__search-btn {
   height: 36px;
   width: 36px;
-  border: 1px solid red;
+  border: 1px solid #D1D5DB;
   margin-bottom: 16px;
+  box-shadow: 0px 1px 2px 0px #00000012;
+  background: url('./images/search.svg') no-repeat center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
 }
 
 .sidebar-small__list {
   padding-bottom: 32px;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid #E5E7EB;
   margin-bottom: 32px;
+}
+
+.sidebar-small__item--inbox {
+  position: relative;
+}
+
+.sidebar-small__item--inbox::after {
+  position: absolute;
+  content: '';
+  top: 6px;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8B5CF6;
 }
 
 .sidebar-small__item {
   height: 36px;
   width: 36px;
-  border: 1px solid red;
   margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 .sidebar-small__item:last-child {
   margin-bottom: 0;
 }
 
-.sidebar-small__projects-title {
-  height: 36px;
-  width: 36px;
-  border: 1px solid red;
-  margin-bottom: 289px;
+.sidebar-small__item:hover,
+.sidebar-small__projects:hover,
+.sidebar-small__item:focus,
+.sidebar-small__projects:focus {
+  background-color: #EDE9FE;
 }
 
-.sidebar-small__new-project {
+.sidebar-small__item:hover svg > path,
+.sidebar-small__item:focus svg > path,
+.sidebar-small__projects:hover svg > path,
+.sidebar-small__projects:focus svg > path {
+  stroke: #7C3AED;
+}
+
+.sidebar-small__projects {
+  border-radius: 4px;
+}
+
+.sidebar-small__projects-link {
+  height: 36px;
+  width: 36px;
+  margin-bottom: 289px;
+  padding: 8px;
+  display: block;
+}
+
+.sidebar-small__new-project-btn {
   height: 32px;
   width: 32px;
-  border: 1px solid red;
   margin-bottom: 24px;
+  font-size: 0;
+  cursor: pointer;
+  background-color: #7C3AED;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  position: relative;
+}
+
+.sidebar-small__new-project-btn::before {
+  position: absolute;
+  content: '';
+  left: 11px;
+  top: 16px;
+  width: 9px;
+  height: 1.5px;
+  background-color: #fff;
+}
+
+.sidebar-small__new-project-btn::after {
+  position: absolute;
+  content: '';
+  left: 11px;
+  top: 16px;
+  width: 9px;
+  height: 1.5px;
+  background-color: #fff;
+  transform: rotate(-90deg);
 }
 
 .sidebar-small__footer {
   height: 88px;
-  border: 1px solid red;
+  background: url('./images/avatar.svg') no-repeat center #F4F4F5;
 }
 
 .sidebar-big {
