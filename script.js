@@ -1,93 +1,93 @@
-const sidebarMenu = document.querySelector('.menu');
-const headerMenu = sidebarMenu.querySelector('.menu-header');
-const menuLogo = headerMenu.querySelector('.menu-header__logo');
-const menuToggle = headerMenu.querySelector('.menu-header__toggle');
+const sidebar = document.querySelector('.sidebar');
 
-const navSidebarMenu = sidebarMenu.querySelector('.menu-nav');
-const itemsNav = navSidebarMenu.querySelectorAll('.menu-nav__item');
-const linksNav = navSidebarMenu.querySelectorAll('.menu-nav__link');
-const countInbox = navSidebarMenu.querySelector('.menu-nav__count');
-const spotInbox = navSidebarMenu.querySelector('.menu-nav__spot');
+const sidebarSmall = sidebar.querySelector('.sidebar-small');
+const sidebarSmallToggle = sidebarSmall.querySelector('.sidebar-small__toggle');
+const sidebarSmallHeader = sidebarSmall.querySelector('.sidebar-small__header');
+const sidebarSmallSearchBtn = sidebarSmall.querySelector('.sidebar-small__search-btn');
+const sidebarSmallNav = sidebarSmall.querySelector('.sidebar-small__nav');
+const sidebarSmallList = sidebarSmallNav.querySelector('.sidebar-small__list');
+const sidebarSmallItems = sidebarSmallNav.querySelectorAll('.sidebar-small__item');
+const sidebarSmallProject = sidebarSmall.querySelector('.sidebar-small__projects');
+const sidebarSmallFooter = sidebarSmall.querySelector('.sidebar-small__footer');
 
-const menuProject = sidebarMenu.querySelector('.menu-projects');
-const listProject = menuProject.querySelector('.menu-projects__list');
-const headingProject = menuProject.querySelector('.menu-projects__heading');
-
-const buttonNewProject = sidebarMenu.querySelector('.new-project__button');
-const signNewProject = buttonNewProject.querySelector('.new-project__sign');
-
-const footerMenu = sidebarMenu.querySelector('.menu-footer');
-const avatarMenuFooter = footerMenu.querySelector('.menu-footer__avatar');
-const authorFooterMenu = footerMenu.querySelector('.menu-footer__author');
-const buttonFooterMenu = footerMenu.querySelector('.menu-footer__button');
-
-const closeMenu = () => {
-  sidebarMenu.classList.add('menu--closed');
-  menuLogo.classList.add('menu-header__logo--closed');
-  linksNav.forEach((link) => link.classList.add('menu-nav__link--closed'));
-  countInbox.classList.add('menu-nav__count--closed');
-  spotInbox.classList.remove('visually-hidden');
-  itemsNav.forEach((item) => {
-    item.style.paddingRight = '8px';
-    item.style.paddingLeft = '8px';
-    item.style.marginLeft = '8px';
-    item.style.width = '36px';
-  });
-  listProject.classList.add('menu-projects__list--closed');
-  headingProject.classList.add('menu-projects__heading--closed');
-  menuProject.style.marginBottom = '300px';
-
-  buttonNewProject.style.fontSize = '0px';
-  buttonNewProject.style.marginLeft = '33px';
-  buttonNewProject.style.paddingLeft = '0px';
-  buttonNewProject.style.paddingRight = '0px';
-  buttonNewProject.style.width = '32px';
-  buttonNewProject.style.height = '32px';
-
-  signNewProject.style.marginRight = '0px';
-
-  footerMenu.style.paddingLeft = '29px';
-  avatarMenuFooter.style.marginRight = '0px';
-  authorFooterMenu.classList.add('menu-footer__author--closed');
-  buttonFooterMenu.classList.add('menu-footer__button--closed');
-};
+const sidebarBig = sidebar.querySelector('.sidebar-big');
+const sidebarBigToggle = sidebarBig.querySelector('.sidebar-big__toggle');
+const sidebarHeaders = sidebar.querySelectorAll('header');
+const sidebarBigHeader = sidebarBig.querySelector('.sidebar-big__header');
+const sidebarBigLogo = sidebarBigHeader.querySelector('.sidebar-big__img');
+const sidebarBigSearchInput = sidebarBig.querySelector('.sidebar-big__search-input');
+const sidebarBigNav = sidebarBig.querySelector('.sidebar-big__nav');
+const sidebarBigList = sidebarBigNav.querySelector('.sidebar-big__list');
+const sidebarBigItems = sidebarBigNav.querySelectorAll('.sidebar-big__item');
+const sidebarBigProjectLink = sidebarBig.querySelector('.sidebar-big__projects-link');
+const sidebarBigFooter = sidebarBig.querySelector('.sidebar-big__footer');
+const sidebarBigFooterName = sidebarBigFooter.querySelector('.sidebar-big__footer-name');
+const sidebarBigFooterJob = sidebarBigFooter.querySelector('.sidebar-big__footer-job');
 
 const openMenu = () => {
-  sidebarMenu.classList.remove('menu--closed');
-  menuLogo.classList.remove('menu-header__logo--closed');
-  linksNav.forEach((link) => link.classList.remove('menu-nav__link--closed'));
-  countInbox.classList.remove('menu-nav__count--closed');
-  spotInbox.classList.add('visually-hidden');
-  itemsNav.forEach((item) => {
-    item.style.width = '294px';
-  });
-  listProject.classList.remove('menu-projects__list--closed');
-  headingProject.classList.remove('menu-projects__heading--closed');
-  menuProject.style.marginBottom = '68px';
+  if (sidebarBig.classList.contains('sidebar--closed')) {
+    sidebarBig.classList.remove('sidebar--closed');
+  }
+  sidebarSmall.classList.add('sidebar--closed');
+};
 
-  buttonNewProject.style.fontSize = '12px';
-  buttonNewProject.style.lineHeight = '16px';
-  buttonNewProject.style.marginLeft = '24px';
-  buttonNewProject.style.paddingLeft = '89px';
-  buttonNewProject.style.paddingRight = '90px';
-  buttonNewProject.style.width = '294px';
-  buttonNewProject.style.height = '37px';
-  buttonNewProject.style.paddingTop = '10px';
-  buttonNewProject.style.paddingBottom = '10px';
-  signNewProject.style.marginRight = '4px';
+const closeMenu = () => {
+  if (sidebarSmall.classList.contains('sidebar--closed')) {
+    sidebarSmall.classList.remove('sidebar--closed');
+  }
+  sidebarBig.classList.add('sidebar--closed');
+};
 
-  authorFooterMenu.classList.remove('menu-footer__author--closed');
-  avatarMenuFooter.style.marginRight = '16px';
-  buttonFooterMenu.classList.remove('menu-footer__button--closed');
-}
+sidebarSmallToggle.addEventListener('click', openMenu);
+sidebarBigToggle.addEventListener('click', closeMenu);
 
-const toggleMenu = () => {
-  if (sidebarMenu.classList.contains('menu--closed')) {
-    openMenu();
+const switcherTheme = sidebar.querySelector('input[type="checkbox"]');
+
+const switchToDarkTheme = () => {
+  sidebarSmall.classList.add('sidebar--dark');
+  sidebarBig.classList.add('sidebar--dark');
+  sidebarHeaders.forEach((header) => header.classList.add('sidebar__header--dark'));
+  sidebarBigLogo.src = './images/logo-white.svg';
+  sidebarSmallSearchBtn.classList.add('sidebar-small__search-btn--dark');
+  sidebarBigSearchInput.classList.add('sidebar-big__search-input--dark');
+  sidebarSmallList.classList.add('sidebar-small__list--dark');
+  sidebarSmallItems.forEach((item) => item.classList.add('sidebar-small__item--dark'));
+  sidebarBigList.classList.add('sidebar-big__list--dark');
+  sidebarBigItems.forEach((item) => item.classList.add('sidebar-big__item--dark'));
+  sidebarSmallProject.classList.add('sidebar-small__projects--dark');
+  sidebarBigProjectLink.classList.add('sidebar-big__projects-link--dark');
+  sidebarSmallFooter.classList.add('sidebar-small__footer--dark');
+  sidebarBigFooter.classList.add('sidebar-big__footer--dark');
+  sidebarBigFooterName.classList.add('sidebar-big__footer-name--dark');
+  sidebarBigFooterJob.classList.add('sidebar-big__footer-job--dark');
+};
+
+const switchToLightTheme = () => {
+  sidebar.classList.remove('sidebar--dark');
+  sidebarSmall.classList.remove('sidebar--dark');
+  sidebarBig.classList.remove('sidebar--dark');
+  sidebarHeaders.forEach((header) => header.classList.remove('sidebar__header--dark'));
+  sidebarBigLogo.src = './images/logo-black.svg';
+  sidebarSmallSearchBtn.classList.remove('sidebar-small__search-btn--dark');
+  sidebarBigSearchInput.classList.remove('sidebar-big__search-input--dark');
+  sidebarSmallList.classList.remove('sidebar-small__list--dark');
+  sidebarSmallItems.forEach((item) => item.classList.remove('sidebar-small__item--dark'));
+  sidebarBigList.classList.remove('sidebar-big__list--dark');
+  sidebarBigItems.forEach((item) => item.classList.remove('sidebar-big__item--dark'));
+  sidebarSmallProject.classList.remove('sidebar-small__projects--dark');
+  sidebarBigProjectLink.classList.remove('sidebar-big__projects-link--dark');
+  sidebarSmallFooter.classList.remove('sidebar-small__footer--dark');
+  sidebarBigFooter.classList.remove('sidebar-big__footer--dark');
+  sidebarBigFooterName.classList.remove('sidebar-big__footer-name--dark');
+  sidebarBigFooterJob.classList.remove('sidebar-big__footer-job--dark');
+};
+
+const toggleTheme = () => {
+  if (switcherTheme.checked === true) {
+    switchToDarkTheme();
   } else {
-    closeMenu();
+    switchToLightTheme();
   }
 };
 
-menuToggle.addEventListener('click', toggleMenu);
-
+switcherTheme.addEventListener('change', toggleTheme);
