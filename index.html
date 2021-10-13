@@ -10,7 +10,13 @@
 <body>
   <section class="sidebar">
     <h1 class="visually-hidden">Боковое меню</h1>
-    <section class="sidebar-small sidebar-small--closed">
+    <!-- Переключатель тем -->
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+
+    <section class="sidebar-small">
       <h2 class="visually-hidden">Свернутое меню</h2>
       <header class="sidebar-small__header">
         <button class="sidebar-small__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
@@ -88,12 +94,12 @@
       </footer>
     </section>
 
-    <section class="sidebar-big">
+    <section class="sidebar-big sidebar--closed">
       <h2 class="visually-hidden">Развернутое меню</h2>
       <header class="sidebar-big__header">
         <button class="sidebar-big__toggle" type="button"><span class="visually-hidden">Скрыть меню</span></button>
         <a href="#" class="sidebar-big__logo">
-          <img src="./images/logo-black.svg" alt="Студия Лепёхина">
+          <img class="sidebar-big__img" src="./images/logo-black.svg" alt="Студия Лепёхина">
         </a>
       </header>
 
@@ -115,7 +121,7 @@
                 Главная
               </a>
             </li>
-            <li class="sidebar-big__item">
+            <li class="sidebar-big__item sidebar-big__item--inbox">
               <a class="sidebar-big__link" href="#">
                 <svg class="sidebar-big__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.3334 10H13.3334L11.6667 12.5H8.33335L6.66669 10H1.66669" stroke="#71717A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -179,12 +185,12 @@
       </div>
 
       <footer class="sidebar-big__footer">
-        <img class="sidebar-big__footer__avatar" src="./images/avatar.svg" alt="Разработчик Михаил Воробьев">
-        <div class="sidebar-big__footer__author">
-          <b class="sidebar-big__footer__name">Михаил Воробьев</b><br>
-          <i class="sidebar-big__footer__job">Разработчик</i>
+        <img class="sidebar-big__footer-avatar" src="./images/avatar.svg" alt="Разработчик Михаил Воробьев">
+        <div class="sidebar-big__footer-author">
+          <b class="sidebar-big__footer-name">Михаил Воробьев</b><br>
+          <i class="sidebar-big__footer-job">Разработчик</i>
         </div>
-        <button class="sidebar-big__footer__button">Узнать больше</button>
+        <button class="sidebar-big__footer-button">Узнать больше</button>
       </footer>
 
     </section>
